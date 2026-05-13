@@ -119,16 +119,22 @@ export default function JuryFitnessWebsite() {
                     Help clients identify fitness goals, improve nutrition habits, and receive a personalized transformation strategy.
                   </p>
 
-                  <form className="space-y-3">
+                  <form
+  action="https://formspree.io/f/xlgzkgze"
+  method="POST"
+  className="space-y-3"
+>
                     <input
                       type="text"
+                      name="name"
                       placeholder="Full Name"
-                      className="w-full rounded-xl px-4 py-3 bg-white/90 outline-none"
+                    
                     />
                     <input
                       type="email"
+                      name="email"
                       placeholder="Email Address"
-                      className="w-full rounded-xl px-4 py-3 bg-white/90 outline-none"
+                    
                     />
                     <button className="w-full bg-slate-950 text-white py-3 rounded-xl font-semibold hover:bg-slate-800 transition">
                       Get Started
