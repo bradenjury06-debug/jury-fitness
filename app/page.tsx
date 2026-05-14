@@ -1,4 +1,17 @@
+"use client";
+
+import { useState } from "react";
 export default function JuryFitnessWebsite() {
+const [result, setResult] = useState("");
+const [loading, setLoading] = useState(false);
+
+const [formData, setFormData] = useState({
+  name: "",
+  goal: "",
+  weight: "",
+  height: "",
+  experience: "",
+});
   const services = [
     {
       title: "1-on-1 Personal Training",
@@ -357,6 +370,84 @@ export default function JuryFitnessWebsite() {
       <footer className="border-t border-slate-800 py-8 text-center text-slate-500">
         <p>© 2026 Jury Fitness. All rights reserved.</p>
       </footer>
+    <section className="max-w-4xl mx-auto px-6 py-20">
+  <h2 className="text-4xl font-bold mb-8 text-center">
+    AI Fitness Plan Generator
+  </h2>
+
+  <div className="grid gap-4">
+    <input
+      placeholder="Name"
+      className="p-3 rounded-xl text-black"
+      onChange={(e) =>
+        setFormData({ ...formData, name: e.target.value })
+      }
+    />
+
+    <input
+      placeholder="Goal (fat loss, muscle gain, etc)"
+      className="p-3 rounded-xl text-black"
+      onChange={(e) =>
+        setFormData({ ...formData, goal: e.target.value })
+      }
+    />
+
+    <input
+      placeholder="Weight"
+      className="p-3 rounded-xl text-black"
+      onChange={(e) =>
+        setFormData({ ...formData, weight: e.target.value })
+      }
+    />
+
+    <input
+      placeholder="Height"
+      className="p-3 rounded-xl text-black"
+      onChange={(e) =>
+        setFormData({ ...formData, height: e.target.value })
+      }
+    />
+
+    <input
+      placeholder="Experience Level"
+      className="p-3 rounded-xl text-black"
+      onChange={(e) =>
+        setFormData({
+          ...formData,
+          experience: e.target.value,
+        })
+      }
+    />
+
+    <button
+      onClick={async () => {
+        setLoading(true);
+
+        const res = await fetch("/api/generate-plan", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await res.json();
+
+        setResult(data.result);
+        setLoading(false);
+      }}
+      className="bg-emerald-500 text-black font-bold py-3 rounded-xl"
+    >
+      {loading ? "Generating..." : "Generate AI Plan"}
+    </button>
+
+    {result && (
+      <div className="bg-slate-900 p-6 rounded-2xl whitespace-pre-wrap">
+        {result}
+      </div>
+    )}
+  </div>
+</section>
     </div>
   );
 }
