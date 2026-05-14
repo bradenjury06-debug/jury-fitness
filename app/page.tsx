@@ -278,8 +278,15 @@ export default function JuryFitnessWebsite() {
                 ))}
               </ul>
 <a
-  href="https://buy.stripe.com/test_3cIdRafvc3zE0ticDqgA800"
+  href={
+    plan.name === "Starter Plan"
+      ? "https://buy.stripe.com/test_4gM8wQ6YG9Y24Jy5aYgA801K"
+      : plan.name === "Transformation Plan"
+      ? "https://buy.stripe.com/test_3cIdRafvc3zE0ticDqgA800"
+      : "https://buy.stripe.com/test_cNi00k6YG2vA4JyavigA802"
+  }
   target="_blank"
+  rel="noopener noreferrer"
   className="mt-8 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 font-bold py-3 rounded-2xl text-center"
 >
   Choose Plan
