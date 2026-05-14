@@ -280,7 +280,7 @@ export default function JuryFitnessWebsite() {
 <a
   href={
     plan.name === "Starter Plan"
-      ? "https://buy.stripe.com/test_4gM8wQ6YG9Y24Jy5aYgA801K"
+      ? "https://buy.stripe.com/test_4gM8wQ6YG9Y24Jy5aYgA801"
       : plan.name === "Transformation Plan"
       ? "https://buy.stripe.com/test_3cIdRafvc3zE0ticDqgA800"
       : "https://buy.stripe.com/test_cNi00k6YG2vA4JyavigA802"
