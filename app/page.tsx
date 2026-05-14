@@ -87,9 +87,13 @@ export default function JuryFitnessWebsite() {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <button className="bg-emerald-500 hover:bg-emerald-400 transition px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg">
-                  Book a Consultation
-                </button>
+               <a
+  href="https://calendly.com/app/scheduling/meeting_types/user/me"
+  target="_blank"
+  className="bg-emerald-500 hover:bg-emerald-400 transition px-6 py-3 rounded-2xl text-lg font-semibold shadow-lg inline-block"
+>
+  Book a Consultation
+</a> 
 
                 <button className="border border-slate-700 hover:border-emerald-400 hover:text-emerald-400 transition px-6 py-3 rounded-2xl text-lg font-semibold">
                   View Programs
@@ -273,10 +277,14 @@ export default function JuryFitnessWebsite() {
                   </li>
                 ))}
               </ul>
-
-              <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 font-bold py-3 rounded-2xl">
-                Choose Plan
-              </button>
+<a
+  href="https://buy.stripe.com/test_3cIdRafvc3zE0ticDqgA800"
+  target="_blank"
+  className="mt-8 bg-emerald-500 hover:bg-emerald-400 transition text-slate-950 font-bold py-3 rounded-2xl text-center"
+>
+  Choose Plan
+</a>
+              
             </div>
           ))}
         </div>
